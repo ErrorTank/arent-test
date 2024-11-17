@@ -1,7 +1,13 @@
 import "./App.css";
+import { Routes } from "./routes/Routes";
+import { AuthProvider } from "./contexts/AuthContext";
 
 function App() {
-  return null;
+  return (
+    <AuthProvider>
+      <Routes />
+    </AuthProvider>
+  );
 }
 
 export default App;

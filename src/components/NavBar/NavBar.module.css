@@ -1,0 +1,21 @@
+.navbar {
+  background-color: #414141;
+  padding: 0.25rem 0;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 24px;
+  width: auto;
+}
+
+@media (min-width: 768px) {
+  .logo {
+    height: 40px;
+  }
+}

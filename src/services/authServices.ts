@@ -15,15 +15,22 @@ interface AuthResponse {
 
 const authServices = {
   login: async (credentials: LoginCredentials) => {
-    const response = await mainApi.post<AuthResponse, LoginCredentials>(
-      "/auth/login",
-      credentials
-    );
-    return response;
+    // const response = await mainApi.post<AuthResponse, LoginCredentials>(
+    //   "/auth/login",
+    //   credentials
+    // );
+    return {
+      token: "1234567890",
+      user: {
+        id: "1234567890",
+        email: "test@test.com",
+      },
+    };
   },
 
   logout: async () => {
-    return await mainApi.post("/auth/logout", {});
+    // return await mainApi.post("/auth/logout", {});
+    return { success: true };
   },
 };
 

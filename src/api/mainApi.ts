@@ -1,7 +1,8 @@
-import { createApiClient } from "./api";
+import { createApiClient, withAuth } from "./api";
 
-const API_URL = import.meta.env.VITE_API_HOST_URL;
+const BASE_URL = import.meta.env.VITE_API_URL;
 
-const mainApi = createApiClient(API_URL);
+const api = createApiClient(BASE_URL);
+const mainApi = withAuth(api);
 
 export default mainApi;

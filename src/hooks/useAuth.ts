@@ -4,6 +4,7 @@ import { TOKEN_KEY } from "../constants/auth";
 import { useApi } from "./useApi";
 import { User } from "../type/user";
 import { useAuthContext } from "../contexts/AuthContext";
+import mainApi from "../api/mainApi";
 
 interface LoginResponse {
   token: string;
@@ -38,6 +39,7 @@ export const useAuth = () => {
         const { token, user } = result.data;
         localStorage.setItem(TOKEN_KEY, token);
         setUser(user);
+        mainApi.setAuthToken(token);
       }
 
       return result;
@@ -50,6 +52,7 @@ export const useAuth = () => {
 
     localStorage.removeItem(TOKEN_KEY);
     setUser(null);
+    mainApi.clearAuthToken();
 
     return result;
   }, [executeLogout]);
@@ -68,5 +71,6 @@ export const useAuth = () => {
     isLoggingOut,
     loginError,
     logoutError,
+    setUser,
   };
 };

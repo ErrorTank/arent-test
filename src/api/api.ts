@@ -6,24 +6,27 @@ interface RequestOptions {
   body?: string;
 }
 
+export interface ApiClient {
+  setHeader: (key: string, value: string) => void;
+  removeHeader: (key: string) => void;
+  clearHeaders: () => void;
+  get: <TResponse>(endpoint: string) => Promise<TResponse>;
+  post: <TResponse, TBody>(endpoint: string, data: TBody) => Promise<TResponse>;
+  put: <TResponse, TBody>(endpoint: string, data: TBody) => Promise<TResponse>;
+  delete: <TResponse>(endpoint: string) => Promise<TResponse>;
+}
+
 export const createApiClient = (
   baseUrl: string,
-  customHeaders: HeadersInit = {}
-) => {
-  let authToken: string | null = null;
+  defaultHeaders: HeadersInit = {}
+): ApiClient => {
+  let customHeaders: Record<string, string> = {};
 
-  const DEFAULT_HEADERS = {
+  const getHeaders = (): HeadersInit => ({
     "Content-Type": "application/json",
+    ...defaultHeaders,
     ...customHeaders,
-  };
-
-  const getHeaders = (): HeadersInit => {
-    const headers = new Headers(DEFAULT_HEADERS);
-    if (authToken) {
-      headers.set("Authorization", `Bearer ${authToken}`);
-    }
-    return headers;
-  };
+  });
 
   const request = async <TResponse>(
     endpoint: string,
@@ -45,12 +48,16 @@ export const createApiClient = (
   };
 
   return {
-    setAuthToken: (token: string) => {
-      authToken = token;
+    setHeader: (key: string, value: string) => {
+      customHeaders[key] = value;
     },
 
-    clearAuthToken: () => {
-      authToken = null;
+    removeHeader: (key: string) => {
+      delete customHeaders[key];
+    },
+
+    clearHeaders: () => {
+      customHeaders = {};
     },
 
     get: <TResponse>(endpoint: string) => request<TResponse>(endpoint),
@@ -73,3 +80,15 @@ export const createApiClient = (
       }),
   };
 };
+
+export const withAuth = (api: ApiClient) => ({
+  ...api,
+  setAuthToken: (token: string) => {
+    api.setHeader("Authorization", `Bearer ${token}`);
+    return api;
+  },
+  clearAuthToken: () => {
+    api.removeHeader("Authorization");
+    return api;
+  },
+});

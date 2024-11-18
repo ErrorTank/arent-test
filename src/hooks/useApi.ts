@@ -45,7 +45,7 @@ export const useApi = <TData>(
     }
 
     execute();
-  }, [queryKey, execute, enabled, manual]);
+  }, [JSON.stringify(queryKey), execute, enabled, manual]);
 
   return { data, isLoading, error, execute };
 };

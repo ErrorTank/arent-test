@@ -1,0 +1,73 @@
+.mealsHistory {
+  padding: 2rem 0;
+  background: #f1f1f1;
+  min-height: calc(100vh - 64px); /* Subtract header height */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.types {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar but keep functionality */
+.types::-webkit-scrollbar {
+  display: none;
+}
+
+.types {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(234px, 1fr));
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.loadMore {
+  align-self: center;
+  background: linear-gradient(32.95deg, #ffcc21 8.75%, #ff963c 86.64%);
+  color: #ffffff;
+  border: none;
+  padding: 1rem 4rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 1rem 0;
+}
+
+.loadMore:hover {
+  opacity: 0.9;
+}
+
+@media (min-width: 768px) {
+  .mealsHistory {
+    padding: 3rem 0;
+  }
+
+  .content {
+    gap: 3rem;
+  }
+
+  .types {
+    gap: 4rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(4, 1fr); /* Force 4 columns on desktop */
+    gap: 2rem;
+    padding: 0;
+  }
+}

@@ -34,7 +34,7 @@ export const useApi = <TData>(
         setIsLoading(false);
       }
     },
-    [queryFn]
+    [queryKey]
   );
 
   useEffect(() => {
@@ -45,7 +45,7 @@ export const useApi = <TData>(
     }
 
     execute();
-  }, [JSON.stringify(queryKey), execute, enabled, manual]);
+  }, [JSON.stringify(queryKey), enabled, manual]);
 
   return { data, isLoading, error, execute };
 };

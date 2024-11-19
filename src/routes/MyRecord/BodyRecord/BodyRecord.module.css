@@ -1,0 +1,59 @@
+.bodyRecord {
+  padding: 3rem 0;
+  background: #f1f1f1;
+}
+
+.card {
+  background: #2e2e2e;
+  padding: 1.5rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.title {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.date {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.graph {
+  height: 304px;
+  margin-bottom: 1rem;
+}
+
+.periodButtons {
+  display: flex;
+  gap: 1rem;
+}
+
+.periodButton {
+  background: #ffffff;
+  border: none;
+  width: 56px;
+  height: 24px;
+  border-radius: 12px;
+  color: #ffcc21;
+  cursor: pointer;
+}
+
+.periodButton[data-active="true"] {
+  background: #ffcc21;
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: 2rem;
+  }
+}

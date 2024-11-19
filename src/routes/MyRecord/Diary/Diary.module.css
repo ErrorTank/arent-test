@@ -1,0 +1,91 @@
+.diary {
+  padding: 56px 0;
+}
+
+.title {
+  color: #414141;
+  font-size: 22px;
+  margin-bottom: 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  padding: 16px;
+  border: 2px solid #707070;
+  min-height: 231px;
+}
+
+.date {
+  font-size: 18px;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.content {
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.loadMore {
+  display: block;
+  margin: 0 auto;
+  padding: 14px 64px;
+  background: linear-gradient(32.95deg, #ffcc21 8.75%, #ff963c 86.64%);
+  color: #ffffff;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.loadMore:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 767px) {
+  .diary {
+    padding: 24px 0;
+  }
+
+  .title {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .grid {
+    gap: 8px;
+  }
+
+  .card {
+    padding: 12px;
+    min-height: 192px;
+  }
+
+  .date {
+    font-size: 16px;
+  }
+
+  .loadMore {
+    padding: 12px 48px;
+    font-size: 16px;
+  }
+}

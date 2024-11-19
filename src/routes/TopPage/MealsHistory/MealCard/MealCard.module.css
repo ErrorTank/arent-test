@@ -1,0 +1,18 @@
+.mealCard {
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #ffcc21;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+}

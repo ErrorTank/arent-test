@@ -1,0 +1,45 @@
+.wrapper {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progressCircle {
+  transition: stroke-dashoffset 0.35s;
+  transform-origin: 50% 50%;
+}
+
+.content {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ffffff;
+}
+
+.label {
+  font-size: 18px;
+}
+
+.divider {
+  width: 1px;
+  height: 24px;
+  background: #ffffff;
+}
+
+.value {
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+@media (min-width: 768px) {
+  .label {
+    font-size: 20px;
+  }
+
+  .value {
+    font-size: 28px;
+  }
+}

@@ -1,8 +1,4 @@
-export interface Notification {
-  id: string;
-  message: string;
-  isRead: boolean;
-}
+import { Notification } from "../type/notification";
 
 const notificationServices = {
   getNotifications: async (): Promise<Notification[]> => {

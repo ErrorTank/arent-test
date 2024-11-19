@@ -1,0 +1,66 @@
+.navigation {
+  padding: 3rem 0;
+  background: #f1f1f1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
+  gap: 3rem;
+}
+
+.card {
+  position: relative;
+  aspect-ratio: 1;
+  border: 24px solid #ffcc21;
+  padding: 0;
+  cursor: pointer;
+  background: none;
+  overflow: hidden;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: luminosity;
+  opacity: 0.6;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #ffcc21;
+  width: 100%;
+}
+
+.title {
+  font-size: 25px;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.subtitle {
+  font-size: 14px;
+  background: #ff963c;
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

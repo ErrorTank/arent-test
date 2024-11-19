@@ -1,6 +1,5 @@
-import notificationServices, {
-  Notification,
-} from "../services/notificationServices";
+import notificationServices from "../services/notificationServices";
+import { Notification } from "../type/notification";
 import { useApi } from "./useApi";
 
 const useNotifications = () => {

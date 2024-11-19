@@ -1,0 +1,49 @@
+.exerciseItem {
+  padding: 8px 0;
+  border-bottom: 1px solid #777777;
+}
+
+.name {
+  color: #ffffff;
+  font-size: 14px;
+  position: relative;
+  padding-left: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .name {
+    font-size: 15px;
+  }
+}
+
+.name::before {
+  content: "・";
+  position: absolute;
+  left: 0;
+}
+
+.calories {
+  color: #ffcc21;
+  font-size: 14px;
+  margin-top: 2px;
+  padding-left: 16px;
+}
+
+@media (min-width: 768px) {
+  .calories {
+    font-size: 15px;
+  }
+}
+
+.duration {
+  color: #ffcc21;
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  .duration {
+    font-size: 18px;
+  }
+}

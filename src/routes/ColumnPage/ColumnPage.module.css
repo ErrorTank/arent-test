@@ -1,0 +1,9 @@
+.columnPage {
+  padding: 56px 0;
+}
+
+@media (max-width: 767px) {
+  .columnPage {
+    padding: 24px 0;
+  }
+}

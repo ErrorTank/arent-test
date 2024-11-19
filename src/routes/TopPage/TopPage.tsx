@@ -1,5 +1,13 @@
+import { MealsHistory } from "./MealsHistory/MealsHistory";
+import { Hero } from "./Hero/Hero";
+
 const TopPage = () => {
-  return <div>TopPage</div>;
+  return (
+    <>
+      <Hero />
+      <MealsHistory />
+    </>
+  );
 };
 
 export default TopPage;
